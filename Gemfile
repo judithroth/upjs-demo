@@ -9,6 +9,7 @@ gem 'jquery-rails'
 gem 'upjs-rails'
 gem 'compass-rails'
 # gem 'therubyracer'
+gem 'faker'
 
 group :development, :test do
   gem 'byebug'

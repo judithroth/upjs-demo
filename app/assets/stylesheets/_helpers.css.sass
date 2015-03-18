@@ -1,0 +1,95 @@
+=hover
+  &:hover, &:focus
+    @content
+
+=vertical-margin($margin)
+  margin-top: $margin
+  margin-bottom: $margin
+
+=horizontal-margin($margin)
+  margin-left: $margin
+  margin-right: $margin
+
+=horizontal-padding($amount)
+  padding-left: $amount
+  padding-right: $amount
+
+=vertical-padding($amount)
+  padding-top: $amount
+  padding-bottom: $amount
+
+=truncate-text
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
+
+=box-sizing($sizing)
+  box-sizing: $sizing
+  -moz-box-sizing: $sizing
+  -webkit-box-sizing: $sizing
+
+=border-box
+  +box-sizing(border-box)
+
+=clear-after
+  &:before, &:after
+    content: ""
+    display: table
+  &:after
+    clear: both
+  zoom: 1
+
+=opacity($opacity)
+  filter: "alpha(opacity=#{$opacity * 100})"
+  -moz-opacity: $opacity
+  -khtml-opacity: $opacity
+  opacity: $opacity
+
+=font-size($size, $line-height-padding: 2px)
+  font-size: $size
+  line-height: $size + 2 * $line-height-padding
+
+=steal-horizontal-space($amount)
+  +horizontal-margin(-$amount)
+  +horizontal-padding($amount)
+
+=wider-than($width)
+  @media (min-width: $width)
+    @content
+
+=tighter-than($width)
+  @media (max-width: $width - 1)
+    @content
+
+=uppercase
+  text-transform: uppercase
+  
+=block-spacing
+  +vertical-margin($block-spacing)
+
+=controls
+  input[type=text],
+  input[type=number],
+  input[type=url],
+  input[type=email],
+  input[type=date],
+  input[type=phone],
+  input[type=password],
+  input[type=search],
+  select,
+  textarea
+    @content
+    
+=default-font
+  font-family: 'PT Sans', sans-serif
+  +font-size(16px)
+  
+=title-font
+  font-family: 'Arvo', serif
+  +font-size(16px)
+  
+=viewport
+  max-width: 1150px
+  position: relative
+  +horizontal-margin(auto)
+  

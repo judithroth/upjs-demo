@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root 'pages#start'
   resources :sessions, only: [:show, :create] do
     resources :cards, only: [:index, :show, :edit, :update]
-    resources :images, only: :show
+    resources :patterns, only: :show
   end
   
   # The priority is based upon order of creation: first created -> highest priority.
