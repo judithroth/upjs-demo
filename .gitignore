@@ -24,4 +24,3 @@ dump_for_download.dump
 .*.swp
 spec/tmp/assets/jasmine-specs.js
 pubnub.log
-
