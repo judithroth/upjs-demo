@@ -3,13 +3,11 @@ abort "You must run this using 'bundle exec ...'" unless ENV['BUNDLE_BIN_PATH'] 
 set :stages, %w[ production staging ]
 require 'capistrano/ext/multistage'
 require "bundler/capistrano"
-require "whenever/capistrano"
 
 set :application, 'upjs-demo'
-set :whenever_command, "bundle exec whenever"
 set :use_sudo, false
 set :deploy_via, :export
-set :repository, "git@code.makandra.de:henning.koch/lucidity.git"
+set :repository, "https://github.com/makandra/upjs-demo.git"
 set :scm, :git
 set :branch, "master"
 ssh_options[:forward_agent] = true
@@ -91,7 +89,7 @@ namespace :craken do
 end
 
 
-before "deploy:update_code", "db:dump"
+# before "deploy:update_code", "db:dump"
 before "deploy:setup", :db
 after "deploy:update_code", "db:symlink"
 after "deploy:update_code", "deploy:symlink_storage"
