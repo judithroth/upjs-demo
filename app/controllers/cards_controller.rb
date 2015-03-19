@@ -1,12 +1,5 @@
 class CardsController < ApplicationController
   
-  def index
-    load_session
-    load_cards
-    @card = @cards.first
-    render 'show'
-  end
-  
   def show
     load_session
     load_cards

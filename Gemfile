@@ -23,3 +23,9 @@ end
 #   gem 'guard-livereload', :require => false
 #   gem 'rack-livereload'
 # end
+
+
+group :deploy do
+  gem 'capistrano'
+  gem 'capistrano_colors'
+end

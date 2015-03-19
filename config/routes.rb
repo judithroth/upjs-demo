@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'pages#start'
   resources :sessions, only: [:show, :create] do
-    resources :cards, only: [:index, :show, :edit, :update]
+    resources :cards, only: [:show, :edit, :update]
     resources :patterns, only: :show
   end
   
