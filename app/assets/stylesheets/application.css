@@ -1,5 +1,6 @@
 /*
  *= require up
- *= require_tree .
+ *= require theme
+ *= require_tree ./blocks
  *= require_self
  */

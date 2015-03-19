@@ -1,0 +1,27 @@
+@import environment
+
+.side
+  +border-box
+  width: $side-width
+  position: absolute
+  top: 0
+  left: 0
+  bottom: 0
+  background-color: #ccc
+  overflow-y: scroll
+  +pretty-scrollbars
+
+.side--item
+  display: block
+  border-bottom: 1px solid #999
+  padding: 30px 40px
+  +title-font
+  +font-size(24px)
+
+  &.up-active
+    color: white
+    background-color: $color-orange
+
+  &.up-current
+    color: white
+    background-color: $color-red

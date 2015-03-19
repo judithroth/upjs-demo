@@ -81,15 +81,25 @@
     @content
     
 =default-font
-  font-family: 'PT Sans', sans-serif
-  +font-size(16px)
+  font-family: 'Lora', serif
+  +font-size(20px)
   
 =title-font
-  font-family: 'Arvo', serif
-  +font-size(16px)
+  font-family: 'Open Sans Condensed', sans-serif
+  +font-size(20px)
+  font-weight: bold
+  text-transform: uppercase
   
 =viewport
   max-width: 1150px
   position: relative
   +horizontal-margin(auto)
-  
+
+=pretty-scrollbars($width: 10px)
+  &::-webkit-scrollbar
+    background-color: #eee
+    width: $width
+  &::-webkit-scrollbar-thumb
+    background-color: rgba(0, 0, 0, 0.2)
+    &:hover
+      background-color: rgba(0, 0, 0, 0.3)

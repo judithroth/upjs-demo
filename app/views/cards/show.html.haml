@@ -1,0 +1,14 @@
+.side
+  - @cards.each do |card|
+    %a.side--item{href: session_card_path(@session, card)}
+      = card.title
+  .side--more
+    More
+
+.main
+  .card
+    .card--pattern
+    .card--title
+      = @card.title
+    .card--body
+      = simple_format @card.body

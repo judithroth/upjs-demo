@@ -18,10 +18,10 @@ class CreateInitialTables < ActiveRecord::Migration
     
     add_index :cards, :session_id
     
-    create_able :patterns do |t|
+    create_table :patterns do |t|
       t.integer :session_id
-      t.string :name
-      t.text :body
+      t.string :title
+      t.text :css
       t.timestamps
     end
 

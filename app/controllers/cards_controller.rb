@@ -3,10 +3,13 @@ class CardsController < ApplicationController
   def index
     load_session
     load_cards
+    @card = @cards.first
+    render 'show'
   end
   
   def show
     load_session
+    load_cards
     load_card
   end
   
@@ -34,7 +37,7 @@ class CardsController < ApplicationController
   end
   
   def load_cards
-    @cards ||= card_scope.to_a
+    @cards ||= card_scope.paginate(page: params[:page], per_page: 20).to_a
   end
   
   def load_card
