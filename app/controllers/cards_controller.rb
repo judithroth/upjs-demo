@@ -37,8 +37,17 @@ class CardsController < ApplicationController
     @card ||= card_scope.find(params[:id])
   end
   
+  def build_card
+    @card.attributes = card_params
+  end
+  
   def card_scope
     @session.cards
+  end
+  
+  def card_params
+    card_params = params[:card]
+    card_params ? card_params.permit(:title, :body, :pattern) : {}
   end
 
 end

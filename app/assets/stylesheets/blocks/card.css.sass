@@ -1,34 +1,36 @@
 @import environment
 
-$pattern-height: 280px
-$padding: 50px
-
 =viewport
   max-width: 800px
 
 .card
   position: relative
+  
+  .card--edit
+    position: absolute
+    top: 20px
+    right: $card-padding-x
 
-  .card--pattern
-    height: $pattern-height
+  .card--head
+    height: $card-pattern-height
     position: relative
-    box-shadow: inset 0 40px 40px rgba(0, 0, 0, 0.1), inset 0 -15px 0 rgba(255, 255, 255, 0.3)
+    //box-shadow: inset 0 40px 40px rgba(0, 0, 0, 0.1), inset 0 -15px 0 rgba(255, 255, 255, 0.3)
 
   .card--title
     +title-font
-    +font-size(58px)
+    +font-size(54px)
     text-transform: uppercase
     color: white
     position: absolute
     bottom: 40px
-    left: $padding
-    right: $padding
+    left: $card-padding-x
+    right: $card-padding-x
     z-index: 3
     +viewport
-    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5)
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3)
 
   .card--body
-    padding: 35px $padding
+    padding: 35px $card-padding-x
     font-style: italic
     +viewport
     p

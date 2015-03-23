@@ -1,3 +1,13 @@
-.card-form
+=form_for [@session, @card], html: { class: 'card-form' } do |form|
 
-  .card-form--pattern
+  .card-form--head{style: form.object.pattern_css}
+    .card-form--title
+      = form.text_field :title
+    .card-form--actions
+      = form.submit 'Save changes', class: 'action is-primary'
+      = link_to 'Cancel', [@session, @card], class: 'action is-secondary', 'up-target' => '.screen', 'up-transition' => 'move-right'
+      
+  
+  .card-form--body
+    = form.text_area :body
+    

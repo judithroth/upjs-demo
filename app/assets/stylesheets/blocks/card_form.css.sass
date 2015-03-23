@@ -1,0 +1,57 @@
+@import environment
+
+.card-form
+  position: absolute
+  left: 0
+  top: 0
+  right: 0
+  bottom: 0
+  
+.card-form--head
+  position: absolute
+  left: 0
+  right: 0
+  top: 0
+  height: $card-pattern-height
+  +padding-x($card-padding-x)
+//  +border-box
+  
+.card-form--title
+  $title-input-padding-x: 20px
+  position: absolute
+  bottom: 20px
+  left: $card-padding-x
+  right: $card-padding-x
+  input
+    width: 100%
+    background-color: rgba(255, 255, 255, 0.2)
+    border: 1px dashed #fff
+    //padding: 10px
+    +title-font
+    +font-size(42px, 0)
+    +border-box
+    padding: 10px $title-input-padding-x
+    color: white
+    
+  
+.card-form--body
+  position: absolute
+  top: $card-pattern-height
+  bottom: 0
+  left: 0
+  right: 0
+  background-color: #eee
+  padding: 15px $card-padding-x
+  textarea
+    border: 1px dashed #999
+    background-color: rgba(255, 255, 255, 0.8)
+    width: 100%
+    height: 100%
+    +border-box
+    padding: 20px
+
+.card-form--actions
+  position: absolute
+  right: $card-padding-x
+  top: 20px
+  

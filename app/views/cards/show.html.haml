@@ -7,8 +7,10 @@
 
 .main
   .card
-    .card--pattern{style: @card.pattern_css}
+    .card--head{style: @card.pattern_css}
       .card--title
         = @card.title
+      .card--edit
+        = link_to 'Edit', [:edit, @session, @card], class: 'action is-blue', 'up-target' => '.screen', 'up-transition' => 'move-left'
     .card--body
       = simple_format @card.body

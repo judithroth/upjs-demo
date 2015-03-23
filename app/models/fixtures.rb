@@ -41,7 +41,7 @@ class Fixtures
         pattern = patterns[i % patterns.length]
         Card.create!(
           title: Faker::Company.catch_phrase,
-          body: (1..20).collect { |i|  Faker::Lorem.sentences(4 + rand(4)).join(" s") }.join("\n\n"),
+          body: (1..20).collect { |i|  Faker::Lorem.sentences(4 + rand(4)).join(" ") }.join("\n\n"),
           pattern: pattern,
           session: session
         )

@@ -2,19 +2,19 @@
   &:hover, &:focus
     @content
 
-=vertical-margin($margin)
+=margin-y($margin)
   margin-top: $margin
   margin-bottom: $margin
 
-=horizontal-margin($margin)
+=margin-x($margin)
   margin-left: $margin
   margin-right: $margin
 
-=horizontal-padding($amount)
+=padding-x($amount)
   padding-left: $amount
   padding-right: $amount
 
-=vertical-padding($amount)
+=padding-y($amount)
   padding-top: $amount
   padding-bottom: $amount
 
@@ -50,8 +50,8 @@
   line-height: $size + 2 * $line-height-padding
 
 =steal-horizontal-space($amount)
-  +horizontal-margin(-$amount)
-  +horizontal-padding($amount)
+  +margin-x(-$amount)
+  +padding-x($amount)
 
 =wider-than($width)
   @media (min-width: $width)
@@ -65,7 +65,7 @@
   text-transform: uppercase
   
 =block-spacing
-  +vertical-margin($block-spacing)
+  +margin-y($block-spacing)
 
 =controls
   input[type=text],
@@ -80,6 +80,14 @@
   textarea
     @content
     
+=selection
+  ::-moz-selection
+    @content
+  ::-webkit-selection
+    @content
+  ::selection
+    @content
+  
 =default-font
   font-family: 'Lora', serif
   +font-size(20px)
@@ -93,7 +101,7 @@
 =viewport
   max-width: 1150px
   position: relative
-  +horizontal-margin(auto)
+  +margin-x(auto)
 
 =pretty-scrollbars($width: 10px)
   &::-webkit-scrollbar
