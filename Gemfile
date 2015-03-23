@@ -12,6 +12,8 @@ gem 'compass-rails'
 gem 'therubyracer'
 gem 'faker'
 gem 'will_paginate'
+gem 'memoizer'
+gem 'has_defaults'
 
 group :development, :test do
   gem 'byebug'

@@ -12,10 +12,8 @@ class CardsController < ApplicationController
     build_card
   end
   
-  def create
-    load_session
-    load_card
-    build_save
+  def update
+    edit
     if @card.save
       redirect_to [@session, @card]
     else
@@ -30,7 +28,7 @@ class CardsController < ApplicationController
   end
   
   def load_cards
-    @cards ||= card_scope.paginate(page: params[:page], per_page: 20).to_a
+    @cards ||= card_scope.ordered.paginate(page: params[:page], per_page: 20).to_a
   end
   
   def load_card

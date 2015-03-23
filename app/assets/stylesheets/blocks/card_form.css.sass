@@ -1,11 +1,15 @@
 @import environment
 
+$segment-spacing-y: 16px
+$control-padding-x: 20px
+
 .card-form
   position: absolute
   left: 0
   top: 0
   right: 0
   bottom: 0
+ 
   
 .card-form--head
   position: absolute
@@ -17,21 +21,21 @@
 //  +border-box
   
 .card-form--title
-  $title-input-padding-x: 20px
   position: absolute
-  bottom: 20px
+  bottom: $segment-spacing-y
   left: $card-padding-x
   right: $card-padding-x
   input
     width: 100%
     background-color: rgba(255, 255, 255, 0.2)
-    border: 1px dashed #fff
-    //padding: 10px
+    border: 2px dashed rgba(255, 255, 255, 0.6)
+    //box-shadow: 0 0 20px rgba(0, 0, 0, 0.1)
     +title-font
     +font-size(42px, 0)
     +border-box
-    padding: 10px $title-input-padding-x
+    padding: 10px $control-padding-x
     color: white
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2)
     
   
 .card-form--body
@@ -41,17 +45,38 @@
   left: 0
   right: 0
   background-color: #eee
-  padding: 15px $card-padding-x
+  padding: $segment-spacing-y $card-padding-x
   textarea
-    border: 1px dashed #999
+    border: 2px dashed #999
+    //box-shadow: 0 0 20px rgba(0, 0, 0, 0.1)
     background-color: rgba(255, 255, 255, 0.8)
     width: 100%
     height: 100%
     +border-box
-    padding: 20px
+    padding: $control-padding-x
+
+.card-form--change-pattern
+  position: absolute
+  left: $card-padding-x
+  top: 30px
+  color: white
+  +title-font
+  +uppercase
+  text-decoration: underline
+  +font-size(24px)
+  +hover
+    color: $color-blue
 
 .card-form--actions
   position: absolute
   right: $card-padding-x
   top: 20px
   
+.card-form .field_with_errors
+  display: block
+  height: 100%
+  +controls
+    border-style: solid
+    border-color: red
+    outline: 2px solid $color-red
+    

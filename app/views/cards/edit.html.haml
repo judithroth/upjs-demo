@@ -1,6 +1,7 @@
 =form_for [@session, @card], html: { class: 'card-form' } do |form|
 
   .card-form--head{style: form.object.pattern_css}
+    = link_to 'Change pattern', [@session, @card.pattern], class: 'card-form--change-pattern'
     .card-form--title
       = form.text_field :title
     .card-form--actions
