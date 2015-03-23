@@ -1,3 +1,9 @@
+PATH
+  remote: ../upjs
+  specs:
+    upjs-rails (0.2.2)
+      rails (>= 3)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -188,8 +194,6 @@ GEM
     uglifier (2.7.1)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
-    upjs-rails (0.2.2)
-      rails (>= 3)
     web-console (2.1.2)
       activemodel (>= 4.0)
       binding_of_caller (>= 0.7.2)
@@ -216,6 +220,6 @@ DEPENDENCIES
   sass-rails
   therubyracer
   uglifier
-  upjs-rails
+  upjs-rails!
   web-console
   will_paginate

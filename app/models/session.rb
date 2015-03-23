@@ -9,6 +9,8 @@ class Session < ActiveRecord::Base
   has_many :cards, inverse_of: :session
   has_many :patterns, inverse_of: :session
   
+  has_defaults up_enabled: true
+  
   def to_param
     code
   end

@@ -22,5 +22,8 @@ module UpjsDemo
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    config.assets.precompile += ['application_up.js', 'application_classic.js']
+
   end
 end

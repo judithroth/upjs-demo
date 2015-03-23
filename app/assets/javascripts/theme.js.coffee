@@ -1,4 +1,4 @@
-up.motion.defaults
-  duration: 500
-  
-
+if up
+  up.motion.defaults
+    duration: 500
+   

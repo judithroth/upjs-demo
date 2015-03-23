@@ -4,8 +4,13 @@
     %title Up.js demo
     = stylesheet_link_tag 'application', media: 'all'
     = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Open+Sans+Condensed:300,700'
-    = javascript_include_tag 'application'
+    = javascript_include_tag javascript_manifest
     = csrf_meta_tags
   %body
     .screen
       = yield
+    - if @session
+      .mode-switcher
+        .mode-switcher--up Up.js
+        = link_to 'on', url_for(params.merge(up_enabled: true)), class: "mode-switcher--on #{'is-current' if @session.up_enabled?}"
+        = link_to 'off', url_for(params.merge(up_enabled: false)), class: "mode-switcher--off #{'is-current' unless @session.up_enabled?}"

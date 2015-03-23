@@ -1,13 +1,11 @@
 class CardsController < ApplicationController
   
   def show
-    load_session
     load_cards
     load_card
   end
   
   def edit
-    load_session
     load_card
     build_card
   end
@@ -22,10 +20,6 @@ class CardsController < ApplicationController
   end
   
   private
-  
-  def load_session
-    @session ||= Session.where(code: params[:session_id]).first!
-  end
   
   def load_cards
     @cards ||= card_scope.ordered.paginate(page: params[:page], per_page: 20).to_a

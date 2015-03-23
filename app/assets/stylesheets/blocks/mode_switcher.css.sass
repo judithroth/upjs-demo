@@ -1,0 +1,34 @@
+@import environment
+
+$width: 170px
+
+.mode-switcher
+  background-color: rgba(80, 80, 80, 0.7)
+  position: fixed
+  bottom: 0
+  left: 50%
+  margin-left: -0.5 * $width
+  width: $width
+  +clearfix
+  color: white
+  text-align: center
+  
+.mode-switcher--up,
+.mode-switcher--on,
+.mode-switcher--off
+  +title-font
+  display: inline-block
+  +font-size(24px)
+  padding: 3px 9px
+  margin-right: -0.17em
+  
+.mode-switcher--on
+  &.is-current,
+  &:hover
+    background-color: $color-green
+  
+.mode-switcher--off
+  &.is-current,
+  &:hover
+    background-color: $color-red
+    
