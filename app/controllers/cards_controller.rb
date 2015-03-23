@@ -45,7 +45,7 @@ class CardsController < ApplicationController
   
   def card_params
     card_params = params[:card]
-    card_params ? card_params.permit(:title, :body, :pattern) : {}
+    card_params ? card_params.permit(:title, :body, :pattern_id) : {}
   end
 
 end

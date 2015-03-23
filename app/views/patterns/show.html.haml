@@ -1,7 +1,11 @@
-.pattern{:style => @pattern.inline_css}
-  - if @pattern.previous
-    = link_to '&laquo;'.html_safe, session_pattern_path(@session, @pattern.previous, card_id: params[:card_id]), class: 'pattern--previous', 'up-target' => '.pattern', 'up-transition' => 'move-right'
-  - if @pattern.next
-    = link_to '&raquo;'.html_safe, session_pattern_path(@session, @pattern.next, card_id: params[:card_id]), class: 'pattern--next', 'up-target' => '.pattern', 'up-transition' => 'move-left'
-  - if params[:card_id]
-    = link_to 'Select pattern', edit_session_card_path(@session, params[:card_id], pattern_id: @pattern.id), class: 'action pattern--select'
+.box
+  .title Select a pattern
+
+  .pattern{:style => @pattern.inline_css}
+    - if @pattern.previous
+      = link_to '&laquo;'.html_safe, session_pattern_path(@session, @pattern.previous, card_id: params[:card_id]), class: 'pattern--previous', 'up-target' => '.pattern', 'up-transition' => 'move-right', 'up-history' => 'false'
+    - if @pattern.next
+      = link_to '&raquo;'.html_safe, session_pattern_path(@session, @pattern.next, card_id: params[:card_id]), class: 'pattern--next', 'up-target' => '.pattern', 'up-transition' => 'move-left', 'up-history' => 'false'
+    - if params[:card_id]
+      = link_to 'Select pattern', edit_session_card_path(@session, params[:card_id], card: { pattern_id: @pattern.id }), class: 'action pattern--select', 'up-target' => '.card-form--head', 'up-transition' => 'cross-fade'
+      

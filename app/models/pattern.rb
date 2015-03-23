@@ -9,14 +9,16 @@ class Pattern < ActiveRecord::Base
   
   validates_presence_of :title, :css
   
-  scope :sequenced, -> { order(SEQUENCE_FIELD) }
+  def sequence
+    session.patterns.order(SEQUENCE_FIELD)
+  end
   
   memoize def next
-    session.patterns.sequenced.where("#{SEQUENCE_FIELD} > ?", position_in_sequence).first
+    sequence.where("#{SEQUENCE_FIELD} > ?", position_in_sequence).first || sequence.first
   end
 
   memoize def previous
-    session.patterns.sequenced.where("#{SEQUENCE_FIELD} < ?", position_in_sequence).last
+    sequence.where("#{SEQUENCE_FIELD} < ?", position_in_sequence).last || sequence.last
   end
   
   def position_in_sequence
