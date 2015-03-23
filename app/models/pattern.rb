@@ -12,11 +12,11 @@ class Pattern < ActiveRecord::Base
   scope :sequenced, -> { order(SEQUENCE_FIELD) }
   
   memoize def next
-    self.class.sequenced.where("#{SEQUENCE_FIELD} > ?", position_in_sequence).first
+    session.patterns.sequenced.where("#{SEQUENCE_FIELD} > ?", position_in_sequence).first
   end
 
   memoize def previous
-    self.class.sequenced.where("#{SEQUENCE_FIELD} < ?", position_in_sequence).last
+    session.patterns.sequenced.where("#{SEQUENCE_FIELD} < ?", position_in_sequence).last
   end
   
   def position_in_sequence

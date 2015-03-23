@@ -1,0 +1,45 @@
+@import environment
+
+$pattern-width: 500px
+$pattern-height: 400px
+$padding: 25px
+
+.pattern
+  width: $pattern-width
+  height: $pattern-height
+  position: relative
+  
+.pattern--select
+  position: absolute
+  //text-align: center
+  +border-box
+  bottom: $padding
+  $button-width: 200px
+  width: $button-width
+  left: (0.5 * $pattern-width) - (0.5 * $button-width)
+  
+  //color: white
+  //+title-font
+  //+uppercase
+  ////text-decoration: underline
+  //+font-size(30px)
+  //+hover
+  //  color: $color-blue  
+  
+.pattern--previous,
+.pattern--next
+  +title-font
+  +font-size(60px)
+  color: white
+  position: absolute
+  top: ($pattern-height * 0.5) - 35px
+  +hover
+    color: $color-blue
+    
+.pattern--previous
+  left: $padding
+  
+.pattern--next
+  right: $padding
+  
+  
