@@ -18,7 +18,7 @@ class Session < ActiveRecord::Base
   private
   
   def set_code
-    self.code = SecureRandom.urlsafe_base64(8)
+    self.code = SecureRandom.urlsafe_base64(4)
   end
   
   def create_fixtures
