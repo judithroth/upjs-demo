@@ -1,8 +1,9 @@
 =form_for [@session, @card], html: { class: 'card-form', 'up-target' => '.screen', 'up-transition' => 'move-right' } do |form|
 
-  .card-form--head{style: form.object.pattern_css}
+  .card-form--head
+    .card-form--pattern{style: form.object.pattern_css}
+      = form.hidden_field :pattern_id
     = link_to 'Change pattern', session_pattern_path(@session, @card.pattern, card_id: @card.id), class: 'card-form--change-pattern', 'up-modal' => '.pattern', 'up-history' => 'false'
-    = form.hidden_field :pattern_id
     .card-form--title
       = form.text_field :title
     .card-form--actions

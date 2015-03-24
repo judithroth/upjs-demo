@@ -6,4 +6,4 @@ if @up
     $side = $('.side')
     fromTopEdge = $fragment.first().position().top
     currentScrollTop = $side.scrollTop()
-    $('.side').animate({ scrollTop: fromTopEdge + currentScrollTop }, 300)
+    $('.side').animate({ scrollTop: fromTopEdge + currentScrollTop }, 400)

@@ -7,5 +7,5 @@
     - if @pattern.next
       = link_to '&raquo;'.html_safe, session_pattern_path(@session, @pattern.next, card_id: params[:card_id]), class: 'pattern--next', 'up-target' => '.pattern', 'up-transition' => 'move-left', 'up-history' => 'false'
     - if params[:card_id]
-      = link_to 'Select pattern', edit_session_card_path(@session, params[:card_id], card: { pattern_id: @pattern.id }), class: 'action pattern--select', 'up-target' => '.card-form--head', 'up-transition' => 'cross-fade'
+      = link_to 'Select pattern', edit_session_card_path(@session, params[:card_id], card: { pattern_id: @pattern.id }), class: 'action pattern--select', 'up-target' => '.card-form--pattern', 'up-transition' => 'cross-fade'
       
