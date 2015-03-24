@@ -5,6 +5,12 @@ class CardsController < ApplicationController
     load_card
   end
   
+  def index
+    load_cards
+    @card = @cards.first
+    render 'show'
+  end
+  
   def edit
     load_card
     build_card
@@ -15,14 +21,14 @@ class CardsController < ApplicationController
     if @card.save
       redirect_to [@session, @card]
     else
-      render :edit
+      render :edit, status: :bad_request
     end
   end
   
   private
   
   def load_cards
-    @cards ||= card_scope.ordered.paginate(page: params[:page], per_page: 20).to_a
+    @cards ||= card_scope.ordered.paginate(page: params[:page], per_page: 15).to_a
   end
   
   def load_card
